@@ -1,0 +1,132 @@
+{% extends 'app/wrapper.html' %}
+{% load static %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+<header>
+
+</header>
+<main>
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" src = "{% static 'app/content/puzzle1.jpg' %}">
+
+            <div class="card-body">
+		
+              <p class="card-text">Красочный пейзаж джунглей</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" href = "product.html" class="btn btn-sm btn-outline-secondary">Подробнее</a>
+				  <a type="button" href = "upload.html" class="btn btn-sm btn-outline-secondary">Редактировать</a>
+                </div>
+                <small class="text-muted"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" src = "{% static 'app/content/puzzle2.jpg' %}">
+
+            <div class="card-body">
+              <p class="card-text">Котики и ёжики!</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                </div>
+                <small class="text-muted"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+             <img class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" src = "{% static 'app/content/puzzle3.jpg' %}">
+
+            <div class="card-body">
+              <p class="card-text">Как похорошел Новиград при Дийкстре...</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                </div>
+                <small class="text-muted"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+           <img class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" src = "{% static 'app/content/puzzle4.jpg' %}">
+
+            <div class="card-body">
+              <p class="card-text">Что-то очень модное и очень абстрактное</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                </div>
+                <small class="text-muted"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <img class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" src = "{% static 'app/content/puzzle5.jpg' %}">
+
+            <div class="card-body">
+              <p class="card-text">Паззлы любишь? Уху-уху</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                </div>
+                <small class="text-muted"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" src = "{% static 'app/content/puzzle6.jpg' %}">
+
+            <div class="card-body">
+              <p class="card-text">Шедевральный уютный пейзаж на 5000 деталей</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                </div>
+                <small class="text-muted"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" src = "{% static 'app/content/puzzle7.jpg' %}">
+
+            <div class="card-body">
+              <p class="card-text">Осада Вызимы войсками Нильфгаарда, 1280 год, фото в цвете</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                </div>
+                <small class="text-muted"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  {% endblock %}
+</html>

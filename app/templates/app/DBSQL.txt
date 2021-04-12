@@ -1,0 +1,61 @@
+CREATE TABLE `manufacturer` ( `PK_Manufacturer` int(11) NOT NULL, `name` varchar(200) NOT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+INSERT INTO `manufacturer` (`PK_Manufacturer`, `name`) VALUES
+
+(1, 'Castorland'),
+
+(2, 'Educa'),
+
+(3, 'TruePazzle'),
+
+(4, 'IKEA'),
+
+(5, 'PuzzlesBrand');
+CREATE TABLE `category` ( `PK_Category` int(11) NOT NULL, `name` varchar(100) NOT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+INSERT INTO `category` (`PK_Category`, `name`) VALUES
+
+(1, 'Детский'),
+
+(2, 'Для профессионалов'),
+
+(3, 'Яркий'),
+
+(4, 'Про животных'),
+
+(5, 'Пейзаж');
+CREATE TABLE `Puzzle` ( `PK_Puzzle` int(11) NOT NULL, `name` varchar(200) NOT NULL, `description` varchar(200) NOT NULL, `number_of_details` int(11) NOT NULL, `age` int(11) NOT NULL, `ifalldetails` boolean NOT NULL DEFAULT 1, `imagepath` varchar(255) NOT NULL, `PK_Category` int(11) NOT NULL, `PK_Manufacturer` int(11) NOT NULL ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+INSERT INTO `puzzle`(PK_Puzzle, name, description, number_of_details, age , ifalldetails, imagepath, PK_Category , PK_Manufacturer) VALUES
+(1,'Паззл про джунгли','Это паззл про джунгли',500, 10, true, 'ahahahahahalivsi',4,1),
+(2,'Котик и ёжики!','Тут есть и котик, и ёжики!',16, 1, true, 'ahahahahahalivsi',1,2)
+ALTER TABLE `category`
+
+ADD PRIMARY KEY (`PK_Category`);
+
+ALTER TABLE `manufacturer`
+
+ADD PRIMARY KEY (`PK_Manufacturer`);
+
+ALTER TABLE `puzzle`
+
+ADD PRIMARY KEY (`PK_Puzzle`),
+
+ADD KEY `PK_Category` (`PK_Category`),
+
+ADD KEY `PK_Manufacturer` (`PK_Manufacturer`);
+
+ALTER TABLE `manufacturer`
+
+MODIFY `PK_Brand` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+ALTER TABLE `category`
+
+MODIFY `PK_Category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+ALTER TABLE `puzzle`
+
+MODIFY `PK_Puzzle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+ALTER TABLE `puzzle`
+
+ADD CONSTRAINT `puzzle_ibfk_1` FOREIGN KEY (`PK_Category`) REFERENCES `category` (`PK_Category`),
+
+ADD CONSTRAINT `puzzle_ibfk_2` FOREIGN KEY (`PK_Manufacturer`) REFERENCES `manufacturer` (`PK_Manufacturer`);

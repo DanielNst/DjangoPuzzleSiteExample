@@ -1,0 +1,51 @@
+{% extends 'app/wrapper.html' %}
+{% load static %}
+{% block title %}
+{% if pk %}
+    Редактирование паззла
+  {% else %}
+    Добавить паззл
+  {% endif %}
+{% endblock%}
+
+
+
+{% block content %}
+    
+    <!-- Custom styles for this template -->
+<link href={% static "app/content/form-validation.css" %} rel="stylesheet">
+
+ <form method="POST" enctype="multipart/form-data">
+
+            
+   
+   
+   
+<div class="container bg-light align-items-center">
+  <main>
+    <div class="py-5 text-center align-items-center">
+      <img class="d-block mx-auto mb-4" src={% static "app/content/bg1.png" %} alt="" width="80" height="80">
+	  {% if pk %}
+      <h2>Редактирование паззла</h2>
+      {% else %}
+      <h2>Загрузка нового паззла</h2>
+      {% endif %}
+    </div>
+            {% csrf_token %}
+            {{ form }}
+      <div class="align-items-center text-left">
+        <form class="needs-validation" novalidate>
+              
+		<br>
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Загрузить паззл на сайт</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="form-validation.js"></script>
+</form>
+  {% endblock %}
+</html>

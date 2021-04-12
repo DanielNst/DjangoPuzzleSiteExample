@@ -1,0 +1,19 @@
+{% extends 'app/wrapper.html' %}
+{% load static %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+ <main class="px-3">
+   <h1>Обменяй свои паззлы</h1>
+    <p class="lead border-black">Сотни пользователей готовы и тоже хотят поменять свои</p>
+    <p class="lead text-yellow">
+      <a href="{% url 'album' %}" class="btn btn-lg btn-primary fw-bolder text-yellow bg-black border-black">Перейти к каталогу</a>
+    </p>
+  </main>
+{% endblock %}
+
+
+    
+
+</html>

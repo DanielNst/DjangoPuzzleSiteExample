@@ -1,0 +1,68 @@
+{% extends 'app/wrapper.html' %}
+{% load static %}
+
+{% block title %}
+Каталог паззлов
+{% endblock %}
+
+{% block content %}
+<main>
+<div class="album py-5 bg-light">
+<div class="container">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+{% for thisPuzzle in puzzles %}
+			{% if thisPuzzle.imagepath.url == "/False" %}
+			<div class="col">
+			<div class="card shadow-sm">
+			<img src={% static "app/content/bg1.png" %} width="100%" height="225" class="bd-placeholder-img card-img-top" role="img" alt="Отсутствует изображение паззла - неверный путь к изображению">
+            <div class="card-body">
+              <p class="card-text"> {{ thisPuzzle.name}} </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" href = "{{ thisPuzzle.get_url }}" class="btn btn-sm btn-outline-secondary align-bottom">Подробнее</a>
+                </div>
+                <small class="text-muted"></small>
+              </div>
+            </div>
+			</div>
+			 </div>
+			 {% elif thisPuzzle.imagepath %}
+			 <div class="col">
+			<div class="card shadow-sm">
+			<img src="{{thisPuzzle.imagepath.url}}" width="100%" height="225" class="bd-placeholder-img card-img-top" role="img" alt="{{ thisPuzzle.PK_Puzzle }}">
+            <div class="card-body">
+              <p class="card-text"> {{ thisPuzzle.name}} </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" href = "{{ thisPuzzle.get_url }}" class="btn btn-sm btn-outline-secondary align-bottom">Подробнее</a>
+                </div>
+                <small class="text-muted"></small>
+              </div>
+            </div>
+			</div>
+			 </div>
+			 {% else %}
+			  <div class="col">
+			<div class="card shadow-sm">
+			<img src={% static "app/content/bgtest.png" %} width="100%" height="225" class="bd-placeholder-img card-img-top" role="img" alt="Отсутствует изображение паззла">
+            <div class="card-body">
+              <p class="card-text"> {{ thisPuzzle.name}} </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a type="button" href = "{{ thisPuzzle.get_url }}" class="btn btn-sm btn-outline-secondary align-bottom">Подробнее</a>
+                </div>
+                <small class="text-muted"></small>
+              </div>
+            </div>
+			</div>
+			 </div>
+			 {% endif %}
+			{% endfor %}
+        </div>
+      </div>
+    </div>
+</main>
+</html>
+{% endblock %}
+
+

@@ -1,0 +1,65 @@
+{% extends 'app/wrapper.html' %}
+{% load static %}
+{% block title %}
+Подробно о паззле
+{% endblock%}
+
+{% block content %}
+  <main id="content"  class="px-3" >
+	<div class="container">
+		<h1> {{ thisPuzzle.name}}</h1>
+		<div class="feature">
+			<h5>Категория: {{thisPuzzle.PK_Category}} </h5>
+			<div class="row">
+
+				{% if thisPuzzle.imagepath.url == "/False" %}
+				<img src={% static "app/content/bg1.png" %} width="100%" height="225" class="bd-placeholder-img card-img-top" role="img" alt="Отсутствует изображение паззла">
+				{% elif thisPuzzle.imagepath %}
+                <img src="{{thisPuzzle.imagepath.url}}" width="100%" height="225" class="bd-placeholder-img card-img-top" role="img" alt="{{ thisPuzzle.PK_Puzzle }}">
+				{% else %}
+				<img src={% static "app/content/bg1.png" %} width="100%" height="225" class="bd-placeholder-img card-img-top" role="img" alt="Отсутствует изображение паззла">
+				{% endif %}
+
+			</div>
+			<div class="model-info">
+				<p></p>
+				<p>
+					Описание: {{thisPuzzle.description}}
+				</p>
+
+				<h5>Основные характеристики</h5>
+
+				<table class="table">
+
+					<tbody>
+						<tr>
+							<td>Количество деталей</td>
+							<td>{{ thisPuzzle.number_of_details }}</td>
+						</tr>
+
+						<tr>
+							<td>Рекомендуемый возраст</td>
+							<td>{{ thisPuzzle.age}}</td>
+						</tr>
+						
+						 <tr>
+							<td>Производитель</td>
+							<td>{{thisPuzzle.PK_Manufacturer}}</td>
+						</tr>
+						
+						<tr>
+							<td>Все ли есть детали?</td>
+							<td>{{thisPuzzle.ifalldetails}}</td>
+						</tr>
+
+
+					</tbody>
+				</table>
+
+
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endblock %}
